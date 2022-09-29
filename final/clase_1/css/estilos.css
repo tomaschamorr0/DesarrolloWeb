@@ -1,100 +1,107 @@
-*{
-    margin: 10 px;
-    padding: 0;
+body {
+   margin: 40px 20px 40px 20px;
+   display: block;
+   overflow-x: hidden;
+   border: 5px solid black;
+   min-height: 100%;
+  }
+@font-face{
+   font-family:MovLette;
+   src: url("MovLette.ttf") format("truetype");
 }
-body{
-    border:4px solid black;
+
+  html{
+   height: 100%;
+  }
+.main{
+   grid-area: main;
 }
- header{
-    width: 100%;
-    background-color:#E06666;
-    margin-bottom: 1px;
-    position: relative;
-    border-bottom:4px solid black;
+.aside{
+   grid-area: aside;
 }
-header div h1{
-    display: inline-block;
-    margin: 2.5rem 1.5rem 1rem;
-    position: relative;
+.section{
+   grid-area: section;
 }
-header div{
-    display: inline-block;
-    text-align:left;
-    position: relative;
+.footer{
+   grid-area: footer;
+   background-color: darkgray;
+   border-top: 5px solid black;
 }
-.logo{
-    margin-left: 15%;
+.grid-container{
+   display: grid;
+   text-align: center;
+   grid-template: 
+   "header"
+   "main" 30%
+   "aside" 30%
+   "section" 30%
+   "footer" auto/
+   100%;
+} 
+  .navbar-brand {
+   font-family: MovLette;
+   font-size: 55px;
+   text-transform: uppercase;
+   font-weight: 390;
+  }
+nav ul li a {
+   font-family: MovLette;
+   font-size: 22px;
+   margin: auto 10px;
+   color: black;
 }
-.icono{
-    float:right;
-    margin-top: 1.5rem;
-    margin-right: 4rem;
-    position: relative;
+nav div a img{
+   height: 80px;
+   width: 100px;
 }
- .imgprin{
-    display: inline-block;
-    margin-bottom: 10rem;
-    margin-top: 4rem;
-    margin-left: 20rem; 
-    border:4px solid black;
- }  
- .imagen{
-    height: 400px;
-    width: 600px;
+.navbar-brand{
+   margin-left: 150px;
+}
+#Letras-nav{
+   color: rgb(0, 0, 0);
+}
+.slide{
+   margin: 7vw 2vw 2vw 3vw ;
+   border: 5px solid black;
+   width: 50vw;
+}
+.slide img{
+   height: 60vh;
+}
+.navbar{
+   border-bottom: 5px solid black;
+}
+li a.active, li a:hover{
+   background-color: #fa6868;;
+   transition: .5s;
+   border-radius: 20px;
+}
+.checkbton{
+   font-size: 30px;
+   color: black;
+   float: right;
+   line-height: 80px;
+   margin-right: 40px;
+   cursor: pointer;
+   display: none;
+}
+
+ .col-md-6{
+   margin-top: 9rem;
  }
- .mainuno{
-    position: relative;
-    width: 100%;
-    height: 30%;
- }
- p{
-    width: 30%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color:black;
-    font-size: 2.2rem;
-    text-align:left;
-    display: inline-block;
-    position: absolute;
-    top: 5%;
-    left: 55%;
- }
- .maindos{
-    position: relative;
-    width: 100%;
-    height: 20rem;
- }
-    .deportes img{
-    position:absolute;
-    height: 200px;
-    width: 300px;
-    left: 10%;
-    border:4px solid black;
- }
- .entretenimiento img{
-    position:absolute;
-    height: 200px;
-    width: 300px;
-    left: 40%;
-    border:4px solid black;
- }
- .economia img{
-    position:absolute;
-    height: 200px;
-    width: 300px;
-    left: 70%;
-    border:4px solid black;
- }
- footer{
-    background-color:#999999;
-    border-top:4px solid black;
-    position:relative;
-    margin-bottom: 1px;
-    width: 100%;
-    height: 100px;
-    bottom: 0;
- }
- .redes{
-    display:inline-block;
+ .section{
+   margin-top: 200px;
+
+   align-items: center;
+}
+.section div{
+   border: 5px solid black;
+}
+
+  .redes{
+   margin-top: 60px;
+   display:inline-block;
+   align-items: center;
  }
  .face{
     position: absolute;
@@ -116,3 +123,30 @@ header div{
     right: 2%;
     transform: translate(-20%);
 }
+.copyright{
+   font-family: MovLette;
+   position: absolute;
+   left: 45%;
+} 
+ @media (min-width: 1000px){
+   .grid-container{
+      margin-top: 30px;
+      grid-template: 
+      "main    aside" 45%
+      "section section" 40%
+      "footer  footer" 15% /
+      60% auto
+      ;
+   }
+}
+/* @media(max-width: 300px){
+   .grid-container{
+      grid-template:
+      "header"
+      "main" 40%
+      "aside" 40%
+      "section" 42%
+      "footer" auto /
+      100%;
+   }
+} */
